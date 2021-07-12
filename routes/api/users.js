@@ -20,7 +20,7 @@ router.get('/test', (req, res) => {
 router.post('/register', (req, res) => {
   
   // Find user by email
-  db.Wallet.findOne({ email: req.body.email })
+  db.User.findOne({ email: req.body.email })
   .then(user => {
     // if email already exists, send a 400 response
     if (user) {
@@ -54,7 +54,7 @@ router.post('/login', (req, res) => {
   const password = req.body.password;
 
   // Find a user via email
-  db.Wallet.findOne({ email })
+  db.User.findOne({ email })
   .then(user => {
     if (!user) {
       res.status(400).json({ msg: 'User not found'});

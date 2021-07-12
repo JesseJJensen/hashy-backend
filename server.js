@@ -18,7 +18,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.status(200).json({ message: 'Smile, you are being watch by the Backend Team' });
 });
 
 app.use('/api/users', users);

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Mongo connection
 console.log(process.env.MONGO_URI);
-mongoose.connect(process.env.MONGO_URI + '/hashy', {
+mongoose.connect(process.env.MONGO_URI + '/hashydata', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: true
@@ -23,6 +23,6 @@ db.on('error', (error) => {
 });
 
 module.exports = {
-    Wallet: require('./User'),
+    User: require('./User'),
     Wallet: require('./Wallet'),
 }
