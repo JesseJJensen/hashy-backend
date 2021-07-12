@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 9000;
 const passport = require('passport');
 
 const users = require('./routes/api/users');
@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', users);
+app.use('/wallets', require('./controllers/walletsController'))
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
