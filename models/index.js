@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Mongo connection
 console.log(process.env.MONGO_URI);
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI + '/hashy', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: true
